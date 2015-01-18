@@ -24,7 +24,7 @@ nets = dict(
         SUBSIDY_FUNC=lambda height: 100*100000000,
         BLOCKHASH_FUNC=lambda data: pack.IntType(256).unpack(__import__('quark_hash').getPoWHash(data)),
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('quark_hash').getPoWHash(data)),
-        BLOCK_PERIOD=30, # s
+        BLOCK_PERIOD=100, # s
         SYMBOL='C-NOTE',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'CnoteCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/CnoteCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.c-note'), 'c-note.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://cnote.aedb.eu/index.php?block_hash=',
